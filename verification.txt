@@ -1,0 +1,5 @@
+mnt_data_refs: 0
+assets_count: 27
+public_images_count: 0
+has_sitemap: True
+has_robots: True
