@@ -3977,20 +3977,66 @@ body {
 
 
 
-/* ===== 本次更新：銷售情境 / 合作支援小卡背景圖 + SEO 重疊修正 ===== */
+/* ===== CLEAN FINAL：HERO 字體縮小 + 小卡依文案選圖 + SEO 重疊修正 ===== */
+.hero h1,
+.hero h1.smoothTypewriterTitle {
+  font-size: clamp(40px, 4.6vw, 64px) !important;
+  line-height: 1.12 !important;
+  max-width: 700px !important;
+  letter-spacing: -.035em !important;
+}
+
+.smoothTypewriterTitle .typewriterGhost,
+.smoothTypewriterTitle .typewriterTextLayer {
+  gap: 6px !important;
+}
+
+.smoothTypewriterTitle .typewriterGhost span,
+.smoothTypewriterTitle .typewriterLine {
+  max-width: min(100%, 11em) !important;
+}
+
+@media (min-width: 1101px) {
+  .hero h1,
+  .hero h1.smoothTypewriterTitle {
+    font-size: clamp(44px, 4.2vw, 64px) !important;
+    max-width: 680px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero h1,
+  .hero h1.smoothTypewriterTitle {
+    font-size: clamp(30px, 8.4vw, 36px) !important;
+    line-height: 1.18 !important;
+    min-height: 2.45em !important;
+  }
+
+  .smoothTypewriterTitle .typewriterGhost,
+  .smoothTypewriterTitle .typewriterTextLayer {
+    gap: 4px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero h1,
+  .hero h1.smoothTypewriterTitle {
+    font-size: clamp(28px, 8vw, 33px) !important;
+  }
+
+  .smoothTypewriterTitle .typewriterGhost span,
+  .smoothTypewriterTitle .typewriterLine {
+    max-width: 10em !important;
+  }
+}
+
 .scenario .info-card,
 .kitCard {
   position: relative !important;
   overflow: hidden !important;
   isolation: isolate !important;
-  background-image:
-    linear-gradient(180deg, rgba(255,255,255,.70) 0%, rgba(255,249,242,.88) 54%, rgba(255,245,236,.97) 100%),
-    var(--card-bg) !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
   border: 1px solid rgba(181,130,99,.18) !important;
-  box-shadow: 0 18px 38px rgba(121,87,65,.11) !important;
+  box-shadow: 0 18px 42px rgba(121,87,65,.12) !important;
 }
 
 .scenario .info-card::before,
@@ -3998,20 +4044,34 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 12% 10%, rgba(255,255,255,.42), transparent 34%);
-  opacity: .75;
-  z-index: -1;
-  pointer-events: none;
+  background-image: var(--card-bg);
+  background-size: cover;
+  background-position: center;
+  opacity: .34;
+  transform: scale(1.04);
+  transition: transform .45s ease, opacity .35s ease;
+  z-index: -2;
 }
 
-.scenario .info-card:hover,
-.kitCard:hover {
-  transform: translateY(-6px) !important;
-  box-shadow: 0 26px 50px rgba(121,87,65,.17) !important;
+.scenario .info-card::after,
+.kitCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.58) 0%, rgba(255,250,244,.84) 52%, rgba(255,246,238,.96) 100%),
+    radial-gradient(circle at 20% 15%, rgba(223,189,134,.25), transparent 34%);
+  z-index: -1;
+}
+
+.scenario .info-card:hover::before,
+.kitCard:hover::before {
+  opacity: .44;
+  transform: scale(1.09);
 }
 
 .scenario .info-card {
-  min-height: 220px !important;
+  min-height: 224px !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: flex-end !important;
@@ -4019,20 +4079,27 @@ body {
   padding: 26px !important;
 }
 
+.kitCard {
+  min-height: 238px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+  padding: 24px !important;
+}
+
 .scenario .info-card .card-icon,
 .kitCard .kitIcon {
-  width: 50px !important;
-  height: 50px !important;
-  display: grid !important;
-  place-items: center !important;
-  border-radius: 17px !important;
-  background: rgba(255,255,255,.84) !important;
-  box-shadow: 0 10px 24px rgba(83,55,38,.12) !important;
-  color: #7c3f46 !important;
-  font-size: 24px !important;
-  margin-bottom: 4px !important;
   position: relative !important;
   z-index: 1 !important;
+  width: 48px !important;
+  height: 48px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 16px !important;
+  background: rgba(255,255,255,.84) !important;
+  box-shadow: 0 10px 24px rgba(83,55,38,.12) !important;
+  font-size: 24px !important;
 }
 
 .scenario .info-card h3,
@@ -4041,24 +4108,35 @@ body {
 .kitCard p {
   position: relative !important;
   z-index: 1 !important;
-  text-shadow: 0 1px 0 rgba(255,255,255,.55) !important;
 }
 
 .scenario .info-card h3,
 .kitCard h3 {
-  line-height: 1.35 !important;
+  color: #2f1f18 !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.72) !important;
 }
 
-.kitCard {
-  min-height: 236px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: flex-end !important;
-  gap: 10px !important;
-  padding: 24px !important;
+.scenario .info-card p,
+.kitCard p {
+  color: #5f4538 !important;
+  font-weight: 650 !important;
 }
 
-/* 最下方 SEO 區段避免中文長標題與關鍵字雲重疊 */
+/* QR Code 圖背景避免 QR 被裁切得太怪 */
+.kitCard.kit-line::before {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #fffaf5;
+  opacity: .20;
+}
+
+/* 加熱教學圖偏直式，背景置中保留說明感 */
+.kitCard.kit-heating::before {
+  background-size: cover;
+  background-position: center;
+  opacity: .26;
+}
+
 .seoKeywordSection .sectionTitle {
   max-width: 860px !important;
   margin: 0 auto 28px !important;
@@ -4067,31 +4145,20 @@ body {
 
 .seoKeywordSection .sectionTitle h2 {
   line-height: 1.32 !important;
-  margin: 0 0 12px !important;
+  margin-bottom: 12px !important;
   text-wrap: balance;
-  word-break: keep-all !important;
-  overflow-wrap: anywhere !important;
-}
-
-.seoKeywordSection .sectionTitle p {
-  line-height: 1.9 !important;
-  margin: 0 auto !important;
 }
 
 .seoKeywordCloud {
   gap: 10px 12px !important;
-  margin: 6px auto 30px !important;
-  align-items: flex-start !important;
+  margin: 4px auto 28px !important;
 }
 
 .seoKeywordCloud span {
-  display: inline-flex !important;
-  align-items: center !important;
-  min-height: 38px !important;
-  line-height: 1.5 !important;
   white-space: normal !important;
   word-break: keep-all !important;
   overflow-wrap: anywhere !important;
+  line-height: 1.55 !important;
 }
 
 .seoServiceGrid {
@@ -4104,22 +4171,20 @@ body {
 
 .seoServiceCard h3 {
   font-size: clamp(18px, 2.1vw, 20px) !important;
-  line-height: 1.52 !important;
+  line-height: 1.55 !important;
   letter-spacing: -.01em !important;
   word-break: keep-all !important;
   overflow-wrap: anywhere !important;
-  margin-bottom: 10px !important;
 }
 
 .seoServiceCard p {
-  line-height: 1.95 !important;
-  font-size: 14px !important;
+  line-height: 1.92 !important;
 }
 
 @media (max-width: 760px) {
   .scenario .info-card,
   .kitCard {
-    min-height: 200px !important;
+    min-height: 206px !important;
     padding: 22px 20px !important;
   }
 
@@ -4131,18 +4196,13 @@ body {
     font-size: 22px !important;
   }
 
-  .seoKeywordSection {
-    padding-top: 58px !important;
-  }
-
   .seoKeywordSection .sectionTitle {
     margin-bottom: 20px !important;
-    text-align: left !important;
   }
 
   .seoKeywordSection .sectionTitle h2 {
     font-size: clamp(26px, 8vw, 34px) !important;
-    line-height: 1.38 !important;
+    line-height: 1.36 !important;
   }
 
   .seoKeywordCloud {
@@ -4153,7 +4213,6 @@ body {
   .seoKeywordCloud span {
     font-size: 12.5px !important;
     padding: 9px 12px !important;
-    min-height: auto !important;
   }
 
   .seoServiceCard {
@@ -4166,7 +4225,8 @@ body {
   }
 
   .seoServiceCard p {
-    line-height: 1.95 !important;
+    font-size: 14px !important;
+    line-height: 1.92 !important;
   }
 }
 
@@ -4250,6 +4310,261 @@ body {
   .seoWholesaleSection { padding: 52px 0; }
   .seoWholesaleBox { padding: 20px; border-radius: 26px; }
 }
+
+
+/* ===== CLEAN FINAL：HERO 字體縮小 + 小卡依文案選圖 + SEO 重疊修正 ===== */
+.hero h1,
+.hero h1.smoothTypewriterTitle {
+  font-size: clamp(40px, 4.6vw, 64px) !important;
+  line-height: 1.12 !important;
+  max-width: 700px !important;
+  letter-spacing: -.035em !important;
+}
+
+.smoothTypewriterTitle .typewriterGhost,
+.smoothTypewriterTitle .typewriterTextLayer {
+  gap: 6px !important;
+}
+
+.smoothTypewriterTitle .typewriterGhost span,
+.smoothTypewriterTitle .typewriterLine {
+  max-width: min(100%, 11em) !important;
+}
+
+@media (min-width: 1101px) {
+  .hero h1,
+  .hero h1.smoothTypewriterTitle {
+    font-size: clamp(44px, 4.2vw, 64px) !important;
+    max-width: 680px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero h1,
+  .hero h1.smoothTypewriterTitle {
+    font-size: clamp(30px, 8.4vw, 36px) !important;
+    line-height: 1.18 !important;
+    min-height: 2.45em !important;
+  }
+
+  .smoothTypewriterTitle .typewriterGhost,
+  .smoothTypewriterTitle .typewriterTextLayer {
+    gap: 4px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero h1,
+  .hero h1.smoothTypewriterTitle {
+    font-size: clamp(28px, 8vw, 33px) !important;
+  }
+
+  .smoothTypewriterTitle .typewriterGhost span,
+  .smoothTypewriterTitle .typewriterLine {
+    max-width: 10em !important;
+  }
+}
+
+.scenario .info-card,
+.kitCard {
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  border: 1px solid rgba(181,130,99,.18) !important;
+  box-shadow: 0 18px 42px rgba(121,87,65,.12) !important;
+}
+
+.scenario .info-card::before,
+.kitCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--card-bg);
+  background-size: cover;
+  background-position: center;
+  opacity: .34;
+  transform: scale(1.04);
+  transition: transform .45s ease, opacity .35s ease;
+  z-index: -2;
+}
+
+.scenario .info-card::after,
+.kitCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.58) 0%, rgba(255,250,244,.84) 52%, rgba(255,246,238,.96) 100%),
+    radial-gradient(circle at 20% 15%, rgba(223,189,134,.25), transparent 34%);
+  z-index: -1;
+}
+
+.scenario .info-card:hover::before,
+.kitCard:hover::before {
+  opacity: .44;
+  transform: scale(1.09);
+}
+
+.scenario .info-card {
+  min-height: 224px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+  padding: 26px !important;
+}
+
+.kitCard {
+  min-height: 238px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+  padding: 24px !important;
+}
+
+.scenario .info-card .card-icon,
+.kitCard .kitIcon {
+  position: relative !important;
+  z-index: 1 !important;
+  width: 48px !important;
+  height: 48px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 16px !important;
+  background: rgba(255,255,255,.84) !important;
+  box-shadow: 0 10px 24px rgba(83,55,38,.12) !important;
+  font-size: 24px !important;
+}
+
+.scenario .info-card h3,
+.scenario .info-card p,
+.kitCard h3,
+.kitCard p {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.scenario .info-card h3,
+.kitCard h3 {
+  color: #2f1f18 !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.72) !important;
+}
+
+.scenario .info-card p,
+.kitCard p {
+  color: #5f4538 !important;
+  font-weight: 650 !important;
+}
+
+/* QR Code 圖背景避免 QR 被裁切得太怪 */
+.kitCard.kit-line::before {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #fffaf5;
+  opacity: .20;
+}
+
+/* 加熱教學圖偏直式，背景置中保留說明感 */
+.kitCard.kit-heating::before {
+  background-size: cover;
+  background-position: center;
+  opacity: .26;
+}
+
+.seoKeywordSection .sectionTitle {
+  max-width: 860px !important;
+  margin: 0 auto 28px !important;
+  text-align: center !important;
+}
+
+.seoKeywordSection .sectionTitle h2 {
+  line-height: 1.32 !important;
+  margin-bottom: 12px !important;
+  text-wrap: balance;
+}
+
+.seoKeywordCloud {
+  gap: 10px 12px !important;
+  margin: 4px auto 28px !important;
+}
+
+.seoKeywordCloud span {
+  white-space: normal !important;
+  word-break: keep-all !important;
+  overflow-wrap: anywhere !important;
+  line-height: 1.55 !important;
+}
+
+.seoServiceGrid {
+  align-items: stretch !important;
+}
+
+.seoServiceCard {
+  height: 100% !important;
+}
+
+.seoServiceCard h3 {
+  font-size: clamp(18px, 2.1vw, 20px) !important;
+  line-height: 1.55 !important;
+  letter-spacing: -.01em !important;
+  word-break: keep-all !important;
+  overflow-wrap: anywhere !important;
+}
+
+.seoServiceCard p {
+  line-height: 1.92 !important;
+}
+
+@media (max-width: 760px) {
+  .scenario .info-card,
+  .kitCard {
+    min-height: 206px !important;
+    padding: 22px 20px !important;
+  }
+
+  .scenario .info-card .card-icon,
+  .kitCard .kitIcon {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 14px !important;
+    font-size: 22px !important;
+  }
+
+  .seoKeywordSection .sectionTitle {
+    margin-bottom: 20px !important;
+  }
+
+  .seoKeywordSection .sectionTitle h2 {
+    font-size: clamp(26px, 8vw, 34px) !important;
+    line-height: 1.36 !important;
+  }
+
+  .seoKeywordCloud {
+    justify-content: flex-start !important;
+    margin: 0 auto 22px !important;
+  }
+
+  .seoKeywordCloud span {
+    font-size: 12.5px !important;
+    padding: 9px 12px !important;
+  }
+
+  .seoServiceCard {
+    padding: 20px 18px !important;
+  }
+
+  .seoServiceCard h3 {
+    font-size: 18px !important;
+    line-height: 1.58 !important;
+  }
+
+  .seoServiceCard p {
+    font-size: 14px !important;
+    line-height: 1.92 !important;
+  }
+}
+
 </style>
 
 <!-- Product rich result schema removed: B2B wholesale page has no public price/review/rating, avoiding Search Console Product invalid item. -->
@@ -4305,7 +4620,7 @@ body {
   <span class="typewriterTextLayer" aria-hidden="true"><span class="typewriterLine" data-type-text="冷凍手工披薩批發">&nbsp;</span><span class="typewriterLine accentTypewriter" data-type-text="讓團購店家更好賣">&nbsp;</span></span>
 </h1><p>適合團爸團媽、團購公司、冷凍食品批發商與餐飲店家合作。口味完整、操作方便、素材齊全，協助通路快速上架銷售。</p><a class="btn" href="#contact-qr">我要批發合作 →</a><div class="trust"><div><strong>20款</strong><span>鹹甜口味完整</span></div><div><strong>3種</strong><span>常見加熱方式</span></div><div><strong>B2B</strong><span>團購/批發/店家</span></div></div></div><div class="hero-card"><img class="" src="./assets/phone-pizza-a34d3ad02880.jpg" alt="PHONE PIZZA 主視覺" loading="lazy"></div></div><div class="container quick"><div>❄️ 冷凍保存</div><div>📸 素材完整</div><div>🔥 加熱簡單</div><div>📦 通路彈性</div></div></section>
 <section class="brandVisualSection"><div class="container brand-visual"><article class="promo wide"><img class="" src="./assets/phone-pizza-cf99fc8e0d2f.png" alt="6吋薄脆系列" loading="lazy"><div><small>6吋薄脆系列</small><h2>20幾種口味任選</h2></div></article><article class="promo"><img class="" src="./assets/phone-pizza-6998f4032c9d.jpg" alt="地表最涮嘴的脆脆 PIZZA" loading="lazy"><div><small>社群推廣素材</small><h2>視覺記憶點更強</h2></div></article><article class="promo"><img class="" src="./assets/phone-pizza-8b6d2cc4bcf2.jpg" alt="瑪格麗特銷售冠軍" loading="lazy"><div><small>銷售冠軍</small><h2>主打品項清楚</h2></div></article></div></section>
-<section class="scenario-band"><div class="container"><span class="eyebrow">銷售情境</span><h2>把披薩放進不同場景</h2><div class="scenario"><article class="info-card" style="--card-bg:url('./assets/phone-pizza-b79545798afe.jpg')"><div class="card-icon">📣</div><h3>社群開團</h3><p>搭配商品圖與加熱說明，讓開團貼文更完整。</p></article><article class="info-card" style="--card-bg:url('./assets/phone-pizza-f025fbecc11c.png')"><div class="card-icon">🧊</div><h3>冷凍通路鋪貨</h3><p>建立完整冷凍披薩品類，適合搭配檔期。</p></article><article class="info-card" style="--card-bg:url('./assets/phone-pizza-cf99fc8e0d2f.png')"><div class="card-icon">☕</div><h3>餐飲店加購</h3><p>操作簡單、出餐快速，適合作輕食選項。</p></article><article class="info-card" style="--card-bg:url('./assets/phone-pizza-6998f4032c9d.jpg')"><div class="card-icon">🎁</div><h3>節慶組合</h3><p>可組成節慶禮盒、企業團購與分享組。</p></article></div></div></section>
+<section class="scenario-band"><div class="container"><span class="eyebrow">銷售情境</span><h2>把披薩放進不同場景</h2><div class="scenario"><article class="info-card scene-social" style="--card-bg:url('./assets/phone-pizza-6998f4032c9d.jpg')"><div class="card-icon">📣</div><h3>社群開團</h3><p>搭配商品圖與加熱說明，讓開團貼文更完整。</p></article><article class="info-card scene-channel" style="--card-bg:url('./assets/phone-pizza-cf99fc8e0d2f.png')"><div class="card-icon">🧊</div><h3>冷凍通路鋪貨</h3><p>建立完整冷凍披薩品類，適合搭配檔期。</p></article><article class="info-card scene-cafe" style="--card-bg:url('./assets/phone-pizza-f1edbb32ec0a.jpg')"><div class="card-icon">☕</div><h3>餐飲店加購</h3><p>操作簡單、出餐快速，適合作輕食選項。</p></article><article class="info-card scene-gift" style="--card-bg:url('./assets/phone-pizza-f025fbecc11c.png')"><div class="card-icon">🎁</div><h3>節慶組合</h3><p>可組成節慶禮盒、企業團購與分享組。</p></article></div></div></section>
 <section class="mobile-only"><div class="container"><article class="promo"><img class="" src="./assets/phone-pizza-6998f4032c9d.jpg" alt="地表最涮嘴的脆脆 PIZZA" loading="lazy"><div><small>PHONE PIZZA</small><h2>地表最涮嘴的脆脆 PIZZA</h2><p>用品牌宣傳圖降低純文字疲勞感。</p></div></article></div></section>
 <section id="products" class="products-band"><div class="container"><div class="products-top"><div><span class="eyebrow">全系列商品</span><h2>20款口味，組合銷售更好推</h2><p>鹹食、甜點、經典、親子、海鮮、肉食口味完整。</p></div></div><div class="tabs"><button class="tab active" data-cat="全部">全部</button><button class="tab " data-cat="經典起司">經典起司</button><button class="tab " data-cat="親子熱銷">親子熱銷</button><button class="tab " data-cat="肉食系列">肉食系列</button><button class="tab " data-cat="海鮮系列">海鮮系列</button><button class="tab " data-cat="甜點披薩">甜點披薩</button><button class="tab " data-cat="蔬食清爽">蔬食清爽</button><button class="tab " data-cat="鹹食人氣">鹹食人氣</button></div><div class="products"><article class="product-card" data-category="經典起司">
       <div class="product-img"><img class="" src="./assets/phone-pizza-bc0a4ab4138d.jpg" alt="瑪格麗特" loading="lazy"><span>銷售冠軍 No.1</span></div>
@@ -4396,12 +4711,12 @@ body {
       <p>把團購、批發、餐飲店進貨最在意的問題先講清楚，降低洽詢前的疑慮，也讓網站更像專業招商頁。</p>
     </div>
     <div class="kitGrid">
-      <article class="kitCard" style="--card-bg:url('./assets/phone-pizza-bc0a4ab4138d.jpg')"><div class="kitIcon">📝</div><h3>開團素材</h3><p>提供商品圖片、口味介紹、加熱方式，讓團購主更快製作貼文。</p></article>
-      <article class="kitCard" style="--card-bg:url('./assets/phone-pizza-f1edbb32ec0a.jpg')"><div class="kitIcon">🍕</div><h3>熱銷選品建議</h3><p>依通路客群搭配瑪格麗特、夏威夷、甜點款與特色款，降低第一次開團選品壓力。</p></article>
-      <article class="kitCard" style="--card-bg:url('./assets/phone-pizza-6652ce995958.jpg')"><div class="kitIcon">📦</div><h3>批發與出貨規劃</h3><p>可洽詢批發價格、最低訂購量、冷凍配送方式與檔期合作。</p></article>
-      <article class="kitCard" style="--card-bg:url('./assets/phone-pizza-7426862c6cc8.jpg')"><div class="kitIcon">☕</div><h3>餐飲店快速出餐</h3><p>適合咖啡廳、早午餐與宵夜店作為輕食加購，降低現場備料壓力。</p></article>
-      <article class="kitCard" style="--card-bg:url('./assets/phone-pizza-a34d3ad02880.jpg')"><div class="kitIcon">🏕️</div><h3>露營備餐與家庭常備</h3><p>6吋小披薩冷凍好保存，適合露營、家庭聚會、宵夜點心與快速上桌。</p></article>
-      <article class="kitCard" style="--card-bg:url('./assets/phone-pizza-84eb7e1a598c.jpg')"><div class="kitIcon">💬</div><h3>LINE 快速洽詢</h3><p>掃描 QR Code 後提供合作身份、通路、需求量，我們協助整理適合方案。</p></article>
+      <article class="kitCard kit-material" style="--card-bg:url('./assets/phone-pizza-6998f4032c9d.jpg')"><div class="kitIcon">📝</div><h3>開團素材</h3><p>提供商品圖片、口味介紹、加熱方式，讓團購主更快製作貼文。</p></article>
+      <article class="kitCard kit-bestseller" style="--card-bg:url('./assets/phone-pizza-8b6d2cc4bcf2.jpg')"><div class="kitIcon">🍕</div><h3>熱銷選品建議</h3><p>依通路客群搭配瑪格麗特、夏威夷、甜點款與特色款，降低第一次開團選品壓力。</p></article>
+      <article class="kitCard kit-wholesale" style="--card-bg:url('./assets/phone-pizza-a34d3ad02880.jpg')"><div class="kitIcon">📦</div><h3>批發與出貨規劃</h3><p>可洽詢批發價格、最低訂購量、冷凍配送方式與檔期合作。</p></article>
+      <article class="kitCard kit-heating" style="--card-bg:url('./assets/phone-pizza-dbbb187537a6.jpg')"><div class="kitIcon">☕</div><h3>餐飲店快速出餐</h3><p>適合咖啡廳、早午餐與宵夜店作為輕食加購，降低現場備料壓力。</p></article>
+      <article class="kitCard kit-family" style="--card-bg:url('./assets/phone-pizza-b96d5fedd4e5.jpg')"><div class="kitIcon">🏕️</div><h3>露營備餐與家庭常備</h3><p>6吋小披薩冷凍好保存，適合露營、家庭聚會、宵夜點心與快速上桌。</p></article>
+      <article class="kitCard kit-line" style="--card-bg:url('./assets/phone-pizza-84eb7e1a598c.jpg')"><div class="kitIcon">💬</div><h3>LINE 快速洽詢</h3><p>掃描 QR Code 後提供合作身份、通路、需求量，我們協助整理適合方案。</p></article>
     </div>
   </div>
 </section>
