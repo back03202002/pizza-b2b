@@ -4561,6 +4561,25 @@ body {
 }
 </style>
 
+
+<style>
+/* ===== PHONE PIZZA fix: product tabs keep Margherita visible ===== */
+.product-card[data-product="瑪格麗特"] {
+  visibility: visible;
+}
+
+.tab {
+  user-select: none;
+}
+
+@media (max-width: 760px) {
+  .product-card[data-product="瑪格麗特"] .product-img .flavorBadge,
+  .product-card[data-product="瑪格麗特"] .product-img .championBadge {
+    white-space: normal !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <header class="header"><div class="container"><div class="brand">PHONE PIZZA<br><small>冷凍手工披薩｜通路開發・批發合作</small></div><nav class="nav"><a href="#products">全系列商品</a><a href="#heating">加熱方式</a><a href="#seo-wholesale">批發合作</a><a href="#contact-qr">LINE洽詢</a></nav></div></header>
@@ -4572,8 +4591,7 @@ body {
 <section class="brandVisualSection"><div class="container brand-visual"><article class="promo wide"><img class="" src="./assets/phone-pizza-cf99fc8e0d2f.png" alt="6吋薄脆系列" loading="lazy"><div><small>6吋薄脆系列</small><h2>20幾種口味任選</h2></div></article><article class="promo"><img class="" src="./assets/phone-pizza-6998f4032c9d.jpg" alt="地表最涮嘴的脆脆 PIZZA" loading="lazy"><div><small>社群推廣素材</small><h2>視覺記憶點更強</h2></div></article><article class="promo"><img class="" src="./assets/phone-pizza-8b6d2cc4bcf2.jpg" alt="瑪格麗特銷售冠軍" loading="lazy"><div><small>銷售冠軍</small><h2>主打品項清楚</h2></div></article></div></section>
 <section class="scenario-band"><div class="container"><span class="eyebrow">銷售情境</span><h2>把披薩放進不同場景</h2><div class="scenario"><article class="info-card" style="--card-bg:url('./assets/card-scenario-social-groupbuy.webp')"><div class="card-icon">📣</div><h3>社群開團</h3><p>搭配商品圖與加熱說明，讓開團貼文更完整。</p></article><article class="info-card" style="--card-bg:url('./assets/card-scenario-frozen-retail.webp')"><div class="card-icon">🧊</div><h3>冷凍通路鋪貨</h3><p>建立完整冷凍披薩品類，適合搭配檔期。</p></article><article class="info-card" style="--card-bg:url('./assets/card-scenario-cafe-addon.webp')"><div class="card-icon">☕</div><h3>餐飲店加購</h3><p>操作簡單、出餐快速，適合作輕食選項。</p></article><article class="info-card" style="--card-bg:url('./assets/card-scenario-festival-gift.webp')"><div class="card-icon">🎁</div><h3>節慶組合</h3><p>可組成節慶禮盒、企業團購與分享組。</p></article></div></div></section>
 <section class="mobile-only"><div class="container"><article class="promo"><img class="" src="./assets/phone-pizza-6998f4032c9d.jpg" alt="地表最涮嘴的脆脆 PIZZA" loading="lazy"><div><small>PHONE PIZZA</small><h2>地表最涮嘴的脆脆 PIZZA</h2><p>用品牌宣傳圖降低純文字疲勞感。</p></div></article></div></section>
-<section id="products" class="products-band"><div class="container"><div class="products-top"><div><span class="eyebrow">全系列商品</span><h2>20款口味，組合銷售更好推</h2><p>鹹食、甜點、經典、親子、海鮮、肉食口味完整。</p></div></div><div class="tabs"><button class="tab active" data-cat="全部">全部</button><button class="tab " data-cat="經典起司">經典起司</button><button class="tab " data-cat="親子熱銷">親子熱銷</button><button class="tab " data-cat="肉食系列">肉食系列</button><button class="tab " data-cat="海鮮系列">海鮮系列</button><button class="tab " data-cat="甜點披薩">甜點披薩</button><button class="tab " data-cat="蔬食清爽">蔬食清爽</button><button class="tab " data-cat="鹹食人氣">鹹食人氣</button></div><div class="products"><article class="product-card" data-category="經典起司">
-      <div class="product-img"><img class="" src="./assets/phone-pizza-bc0a4ab4138d.jpg" alt="瑪格麗特" loading="lazy"><span class="flavorBadge">經典番茄起司</span><span class="championBadge">👑 銷售冠軍 No.1</span></div>
+<section id="products" class="products-band"><div class="container"><div class="products-top"><div><span class="eyebrow">全系列商品</span><h2>20款口味，組合銷售更好推</h2><p>鹹食、甜點、經典、親子、海鮮、肉食口味完整。</p></div></div><div class="tabs"><button class="tab active" data-cat="全部">全部</button><button class="tab " data-cat="經典起司">經典起司</button><button class="tab " data-cat="親子熱銷">親子熱銷</button><button class="tab " data-cat="肉食系列">肉食系列</button><button class="tab " data-cat="海鮮系列">海鮮系列</button><button class="tab " data-cat="甜點披薩">甜點披薩</button><button class="tab " data-cat="蔬食清爽">蔬食清爽</button><button class="tab " data-cat="鹹食人氣">鹹食人氣</button></div><div class="products"><article class="product-card" data-category="經典起司" data-product="瑪格麗特"><div class="product-img"><img class="" src="./assets/phone-pizza-bc0a4ab4138d.jpg" alt="瑪格麗特" loading="lazy"><span class="flavorBadge">經典番茄起司</span><span class="championBadge">👑 銷售冠軍 No.1</span></div>
       <div class="product-body"><small>經典起司</small><h3>瑪格麗特</h3><p>番茄紅醬、起司與九層塔，經典耐吃。</p><details><summary>查看完整介紹 +</summary><div class="detail-list"><p><b>口味亮點：</b>番茄紅醬的酸香、起司奶香與九層塔香氣平衡，口味乾淨耐吃。</p><p><b>通路賣點：</b>最適合作為第一次合作的主打款，接受度高、介紹簡單、回購穩定。</p><p><b>銷售建議：</b>建議放在開團第一張主視覺，搭配銷售冠軍 No.1、經典必吃等話術。</p></div></details></div>
     </article>
 <article class="product-card" data-category="鹹食人氣">
@@ -4842,7 +4860,19 @@ body {
 
 </main><div class="sticky"><b>PHONE PIZZA 批發合作</b><a class="btn" href="#contact-qr">掃 LINE 洽詢 →</a></div><footer class="footer">© 2026 PHONE PIZZA｜冷凍手工披薩通路開發・批發合作</footer>
 <script>
-document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const cat=btn.dataset.cat;document.querySelectorAll('.product-card').forEach(card=>{card.style.display=(cat==='全部'||card.dataset.category===cat)?'block':'none';})}));
+
+document.querySelectorAll('.tab').forEach(btn => btn.addEventListener('click', () => {
+  document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const cat = (btn.dataset.cat || btn.textContent || '全部').trim();
+  document.querySelectorAll('.product-card').forEach(card => {
+    const cardCat = (card.dataset.category || '').trim();
+    const shouldShow = cat === '全部' || cardCat === cat;
+    card.style.display = shouldShow ? 'block' : 'none';
+  });
+}));
+
 </script>
 
 <script>
