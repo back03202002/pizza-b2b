@@ -1,0 +1,1 @@
+PHONE PIZZA 網站正常顯示 + SEO 修正版。上傳 GitHub 時請包含 index.html、package.json、vercel.json、assets/、public/。
