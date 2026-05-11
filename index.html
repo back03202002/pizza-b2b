@@ -4581,9 +4581,311 @@ body {
 </style>
 
 
+
+
 <style>
-/* ===== PHONE PIZZA fix: product filter and image zoom clipping ===== */
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}.tab{border:1px solid var(--line);background:rgba(255,255,255,.65);color:var(--primary);padding:10px 14px;border-radius:999px;font-weight:900;cursor:pointer;font-family:inherit;appearance:none}.tab.active,.tab[aria-selected="true"]{background:var(--primary);color:#fff}.product-card[hidden]{display:none!important}.products{align-items:stretch}.product-card,.productCard{contain:layout paint;overflow:hidden!important}.product-img,.productImageWrap{position:relative;overflow:hidden!important;isolation:isolate;z-index:0}.product-img img,.productImageWrap img,.productCard img,.product-card img{transform:none!important;scale:1!important;transition:filter .22s ease!important;max-width:100%!important}.product-card:hover .product-img img,.productCard:hover .productImageWrap img,.product-card:hover img,.productCard:hover img{transform:none!important;scale:1!important}.product-body,.productBody{position:relative;z-index:2;background:rgba(255,255,255,.86)}.product-card:first-child .product-img .flavorBadge{left:13px!important;right:auto!important;top:13px!important;max-width:48%}.product-card:first-child .product-img .championBadge{left:auto!important;right:13px!important;top:13px!important;max-width:50%}@media(max-width:760px){.tabs{flex-wrap:nowrap;overflow-x:auto;width:calc(100% + 24px);margin-left:-12px;padding:0 12px 8px}.tab{white-space:nowrap;flex:0 0 auto}.product-card:first-child .product-img .flavorBadge,.product-card:first-child .product-img .championBadge{top:10px!important;max-width:47%;font-size:11.5px!important;padding:6px 8px!important;line-height:1.35!important;white-space:normal!important}.product-card:first-child .product-img .flavorBadge{left:10px!important}.product-card:first-child .product-img .championBadge{right:10px!important}}
+/* ===== PHONE PIZZA visual animation + safe zoom + bugfix ===== */
+:root {
+  --pp-ease: cubic-bezier(.2,.72,.18,1);
+}
+
+/* Stable product category buttons */
+.tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.tab {
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.65);
+  color: var(--primary);
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 900;
+  cursor: pointer;
+  font-family: inherit;
+  appearance: none;
+  transition: transform .22s var(--pp-ease), background .22s ease, color .22s ease, box-shadow .22s ease;
+}
+
+.tab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(83,55,38,.10);
+}
+
+.tab.active,
+.tab[aria-selected="true"] {
+  background: var(--primary);
+  color: #fff;
+}
+
+.product-card[hidden] {
+  display: none !important;
+}
+
+/* Global card interaction, light and safe */
+.product-card,
+.productCard,
+.visual-card,
+.hot-card,
+.info-card,
+.kitCard,
+.seoServiceCard,
+.contact-feature-card,
+.contact-side-card,
+.process-step,
+.heating-panel,
+.contact,
+.seoWholesaleBox,
+.trust div,
+.quick div {
+  transition:
+    transform .28s var(--pp-ease),
+    box-shadow .28s var(--pp-ease),
+    border-color .28s ease,
+    filter .28s ease;
+}
+
+.product-card:hover,
+.productCard:hover,
+.visual-card:hover,
+.hot-card:hover,
+.info-card:hover,
+.kitCard:hover,
+.seoServiceCard:hover,
+.contact-feature-card:hover,
+.contact-side-card:hover,
+.process-step:hover,
+.trust div:hover,
+.quick div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 54px rgba(83,55,38,.15);
+}
+
+/* Safe product image zoom: clipped inside image area only */
+.product-card,
+.productCard {
+  contain: layout paint;
+  overflow: hidden !important;
+}
+
+.product-img,
+.productImageWrap,
+.hot-card,
+.visual-card,
+.hero-card {
+  overflow: hidden !important;
+  isolation: isolate;
+}
+
+.product-img img,
+.productImageWrap img,
+.product-card img,
+.productCard img,
+.hot-card img,
+.visual-card img,
+.hero-card img {
+  transform: translateZ(0) scale(1);
+  transform-origin: center;
+  transition:
+    transform .42s var(--pp-ease),
+    filter .42s ease;
+  will-change: transform;
+}
+
+.product-card:hover .product-img img,
+.productCard:hover .productImageWrap img,
+.product-card:hover img,
+.productCard:hover img {
+  transform: translateZ(0) scale(1.045) !important;
+  filter: saturate(1.05) contrast(1.03);
+}
+
+.hot-card:hover img,
+.visual-card:hover img,
+.hero-card:hover img {
+  transform: translateZ(0) scale(1.035) !important;
+  filter: saturate(1.05) contrast(1.03);
+}
+
+/* Keep body text above any image movement */
+.product-body,
+.productBody {
+  position: relative;
+  z-index: 3;
+  background: rgba(255,255,255,.88);
+}
+
+/* Generated scenario/support cards: gentle depth, no heavy scroll lag */
+.scenario .info-card::before,
+.kitCard::before {
+  transition: transform .48s var(--pp-ease), opacity .32s ease, filter .32s ease;
+  will-change: transform;
+}
+
+.scenario .info-card:hover::before,
+.kitCard:hover::before {
+  transform: scale(1.075);
+  opacity: .36;
+  filter: saturate(1.06) contrast(1.03);
+}
+
+/* Button micro-interactions */
+.btn,
+.sticky .btn,
+.backToTop,
+.nav a {
+  transition:
+    transform .22s var(--pp-ease),
+    box-shadow .22s ease,
+    background .22s ease,
+    color .22s ease;
+}
+
+.btn:hover,
+.sticky .btn:hover,
+.backToTop:hover,
+.nav a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 38px rgba(83,55,38,.18);
+}
+
+.btn:active,
+.sticky .btn:active,
+.backToTop:active,
+.nav a:active,
+.tab:active {
+  transform: translateY(0) scale(.97);
+}
+
+/* Subtle page reveal; avoid breaking layout */
+@keyframes ppFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sectionTitle,
+.productsTop,
+.heating-head,
+.contact-content,
+.contact-side,
+.seoWholesaleBox {
+  animation: ppFadeUp .56s var(--pp-ease) both;
+}
+
+/* Margherita badges: separated and safe */
+.products .product-card:first-child::before,
+.products-band .product-card:first-child::before {
+  content: none !important;
+  display: none !important;
+}
+
+.product-card:first-child .product-img .flavorBadge {
+  left: 13px !important;
+  right: auto !important;
+  top: 13px !important;
+  max-width: 48%;
+}
+
+.product-card:first-child .product-img .championBadge {
+  left: auto !important;
+  right: 13px !important;
+  top: 13px !important;
+  max-width: 50%;
+}
+
+/* Performance guardrails */
+@media (min-width: 761px) {
+  .product-card,
+  .productCard,
+  .info-card,
+  .kitCard,
+  .seoServiceCard,
+  .contact-feature-card,
+  .contact-side-card,
+  .process-step {
+    content-visibility: auto;
+    contain-intrinsic-size: 320px;
+  }
+}
+
+@media (max-width: 760px) {
+  .tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    width: calc(100% + 24px);
+    margin-left: -12px;
+    padding: 0 12px 8px;
+  }
+
+  .tab {
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+
+  .product-card:hover,
+  .productCard:hover,
+  .visual-card:hover,
+  .hot-card:hover,
+  .info-card:hover,
+  .kitCard:hover,
+  .seoServiceCard:hover {
+    transform: none;
+  }
+
+  .product-card:hover .product-img img,
+  .productCard:hover .productImageWrap img,
+  .product-card:hover img,
+  .productCard:hover img {
+    transform: translateZ(0) scale(1.025) !important;
+  }
+
+  .product-card:first-child .product-img .flavorBadge,
+  .product-card:first-child .product-img .championBadge {
+    top: 10px !important;
+    max-width: 47%;
+    font-size: 11.5px !important;
+    padding: 6px 8px !important;
+    line-height: 1.35 !important;
+    white-space: normal !important;
+  }
+
+  .product-card:first-child .product-img .flavorBadge {
+    left: 10px !important;
+  }
+
+  .product-card:first-child .product-img .championBadge {
+    right: 10px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .product-card:hover .product-img img,
+  .productCard:hover .productImageWrap img,
+  .product-card:hover img,
+  .productCard:hover img,
+  .hot-card:hover img,
+  .visual-card:hover img,
+  .hero-card:hover img {
+    transform: none !important;
+  }
+}
 </style>
 
 </head>
@@ -5093,24 +5395,29 @@ body {
 </script>
 
 
+
 <script>
 /* ===== PHONE PIZZA stable product filter ===== */
 (function () {
   function normalize(value) {
     return (value || "").replace(/\s+/g, "").trim();
   }
+
   function setupProductTabs() {
     var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
     var cards = Array.prototype.slice.call(document.querySelectorAll(".product-card"));
     if (!tabs.length || !cards.length) return;
+
     function showCategory(rawCategory) {
       var category = normalize(rawCategory || "全部");
+
       tabs.forEach(function (tab) {
         var tabCategory = normalize(tab.getAttribute("data-cat") || tab.textContent || "");
         var active = tabCategory === category;
         tab.classList.toggle("active", active);
         tab.setAttribute("aria-selected", active ? "true" : "false");
       });
+
       cards.forEach(function (card) {
         var cardCategory = normalize(card.getAttribute("data-category") || "");
         var shouldShow = category === "全部" || cardCategory === category;
@@ -5119,14 +5426,17 @@ body {
         card.style.visibility = shouldShow ? "visible" : "hidden";
       });
     }
+
     tabs.forEach(function (tab) {
       tab.addEventListener("click", function (event) {
         event.preventDefault();
         showCategory(tab.getAttribute("data-cat") || tab.textContent || "全部");
       });
     });
+
     showCategory("全部");
   }
+
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", setupProductTabs);
   } else {
