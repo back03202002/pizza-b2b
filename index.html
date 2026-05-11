@@ -3733,6 +3733,34 @@ body {
   animation: typewriterRestartAccent 6.8s steps(8, end) infinite, caretBlink .8s step-end infinite !important;
 }
 
+
+/* ===== HERO 打字機順暢修正：改用 JS 逐字呈現，不使用寬度退回動畫 ===== */
+.smoothTypewriterTitle .typewriterLine {
+  width: auto !important;
+  min-height: 1.04em;
+  max-width: max-content;
+  overflow: visible !important;
+  white-space: nowrap;
+  border-right: .08em solid currentColor;
+  padding-right: .08em;
+  animation: smoothCaretBlink .82s step-end infinite !important;
+}
+.smoothTypewriterTitle .accentTypewriter {
+  animation: smoothCaretBlink .82s step-end infinite !important;
+}
+.smoothTypewriterTitle .typewriterLine.is-paused {
+  border-right-color: transparent;
+}
+@keyframes smoothCaretBlink {
+  0%, 48% { border-color: currentColor; }
+  49%, 100% { border-color: transparent; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .smoothTypewriterTitle .typewriterLine {
+    border-right: 0 !important;
+  }
+}
+
 </style>
 
 <meta name="description" content="PHONE PIZZA 提供冷凍披薩批發、手工披薩批發、冷凍食品批發、團購披薩、團爸團媽合作、餐飲店披薩進貨、咖啡廳輕食批發與冷凍披薩宅配合作。">
@@ -3863,7 +3891,7 @@ body {
 <body>
 <header class="header"><div class="container"><div class="brand">PHONE PIZZA<br><small>冷凍手工披薩｜通路開發・批發合作</small></div><nav class="nav"><a href="#products">全系列商品</a><a href="#heating">加熱方式</a><a href="#seo-wholesale">批發合作</a><a href="#contact-qr">LINE洽詢</a></nav></div></header>
 <main>
-<section class="hero"><div class="container hero-grid"><div><span class="eyebrow">PHONE PIZZA 冷凍手工披薩</span><h1 class="typewriterTitle"><span class="typewriterLine">手工冷凍披薩</span><span class="typewriterLine accentTypewriter">讓通路更好賣</span></h1><p>適合團爸團媽、團購公司、冷凍食品批發商與餐飲店家合作。口味完整、操作方便、素材齊全，協助通路快速上架銷售。</p><a class="btn" href="#contact-qr">我要批發合作 →</a><div class="trust"><div><strong>20款</strong><span>鹹甜口味完整</span></div><div><strong>3種</strong><span>常見加熱方式</span></div><div><strong>B2B</strong><span>團購/批發/店家</span></div></div></div><div class="hero-card"><img class="" src="./assets/phone-pizza-a34d3ad02880.jpg" alt="PHONE PIZZA 主視覺" loading="lazy"></div></div><div class="container quick"><div>❄️ 冷凍保存</div><div>📸 素材完整</div><div>🔥 加熱簡單</div><div>📦 通路彈性</div></div></section>
+<section class="hero"><div class="container hero-grid"><div><span class="eyebrow">PHONE PIZZA 冷凍手工披薩</span><h1 class="typewriterTitle smoothTypewriterTitle" aria-label="手工冷凍披薩讓通路更好賣"><span class="typewriterLine" data-type-text="手工冷凍披薩"></span><span class="typewriterLine accentTypewriter" data-type-text="讓通路更好賣"></span></h1><p>適合團爸團媽、團購公司、冷凍食品批發商與餐飲店家合作。口味完整、操作方便、素材齊全，協助通路快速上架銷售。</p><a class="btn" href="#contact-qr">我要批發合作 →</a><div class="trust"><div><strong>20款</strong><span>鹹甜口味完整</span></div><div><strong>3種</strong><span>常見加熱方式</span></div><div><strong>B2B</strong><span>團購/批發/店家</span></div></div></div><div class="hero-card"><img class="" src="./assets/phone-pizza-a34d3ad02880.jpg" alt="PHONE PIZZA 主視覺" loading="lazy"></div></div><div class="container quick"><div>❄️ 冷凍保存</div><div>📸 素材完整</div><div>🔥 加熱簡單</div><div>📦 通路彈性</div></div></section>
 <section class="brandVisualSection"><div class="container brand-visual"><article class="promo wide"><img class="" src="./assets/phone-pizza-cf99fc8e0d2f.png" alt="6吋薄脆系列" loading="lazy"><div><small>6吋薄脆系列</small><h2>20幾種口味任選</h2></div></article><article class="promo"><img class="" src="./assets/phone-pizza-6998f4032c9d.jpg" alt="地表最涮嘴的脆脆 PIZZA" loading="lazy"><div><small>社群推廣素材</small><h2>視覺記憶點更強</h2></div></article><article class="promo"><img class="" src="./assets/phone-pizza-8b6d2cc4bcf2.jpg" alt="瑪格麗特銷售冠軍" loading="lazy"><div><small>銷售冠軍</small><h2>主打品項清楚</h2></div></article></div></section>
 <section class="mobile-only"><div class="container"><article class="promo"><img class="" src="./assets/phone-pizza-a34d3ad02880.jpg" alt="薄脆系列熱銷推薦" loading="lazy"><div><small>PHONE PIZZA</small><h2>薄脆系列熱銷推薦</h2><p>手機版先看圖，快速抓住目光。</p></div></article></div></section>
 <section class="scenario-band"><div class="container"><span class="eyebrow">銷售情境</span><h2>把披薩放進不同場景</h2><div class="scenario"><article class="info-card">📣<h3>社群開團</h3><p>搭配商品圖與加熱說明，讓開團貼文更完整。</p></article><article class="info-card">🧊<h3>冷凍通路鋪貨</h3><p>建立完整冷凍披薩品類，適合搭配檔期。</p></article><article class="info-card">☕<h3>餐飲店加購</h3><p>操作簡單、出餐快速，適合作輕食選項。</p></article><article class="info-card">🎁<h3>節慶組合</h3><p>可組成節慶禮盒、企業團購與分享組。</p></article></div></div></section>
@@ -4246,6 +4274,70 @@ document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>
   }, { threshold: 0.12 });
 
   items.forEach(function (item) { observer.observe(item); });
+})();
+</script>
+
+
+<script>
+(function () {
+  var title = document.querySelector(".smoothTypewriterTitle");
+  if (!title) return;
+
+  var lines = Array.prototype.slice.call(title.querySelectorAll("[data-type-text]"));
+  if (!lines.length) return;
+
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion) {
+    lines.forEach(function (line) {
+      line.textContent = line.getAttribute("data-type-text") || "";
+      line.classList.add("is-paused");
+    });
+    return;
+  }
+
+  var timer = null;
+  var isStopped = false;
+
+  function wait(ms) {
+    return new Promise(function (resolve) {
+      timer = window.setTimeout(resolve, ms);
+    });
+  }
+
+  async function typeLine(line, delay) {
+    var text = line.getAttribute("data-type-text") || "";
+    line.classList.remove("is-paused");
+
+    for (var i = 1; i <= text.length; i += 1) {
+      if (isStopped) return;
+      line.textContent = text.slice(0, i);
+      await wait(delay);
+    }
+
+    line.classList.add("is-paused");
+  }
+
+  async function play() {
+    while (!isStopped) {
+      lines.forEach(function (line) {
+        line.textContent = "";
+        line.classList.remove("is-paused");
+      });
+
+      await wait(240);
+      await typeLine(lines[0], 92);
+      await wait(220);
+      if (lines[1]) await typeLine(lines[1], 92);
+      await wait(1750);
+    }
+  }
+
+  play();
+
+  window.addEventListener("pagehide", function () {
+    isStopped = true;
+    if (timer) window.clearTimeout(timer);
+  });
 })();
 </script>
 
