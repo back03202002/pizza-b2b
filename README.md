@@ -1,14 +1,20 @@
-# PHONE PIZZA 冷凍手工披薩批發網站
+# PHONE PIZZA 商業開發網站｜可部署輕量版
 
-本版本修改：
+這個版本已把圖片從 `index.html` 內嵌資料分離到 `assets/` 資料夾，避免 GitHub 單一檔案超過 100MB 的限制。
 
-- HERO 主標字體縮小，桌機最大 58px、手機約 30–42px。
-- HERO 打字機保留「冷凍手工披薩批發」「讓團購店家更好賣」，不退回刪字。
-- 移除頁面中「SEO 關鍵字重點」與指定說明文案。
-- LINE 洽詢按鈕統一指向 `#contact-qr`。
-- 保留 `sitemap.xml`、`robots.txt`。
-- 未加入 Product / Offer / makesOffer / itemOffered 結構化資料。
+## 本機預覽
+```bash
+npm install
+npm run dev
+```
 
-## Vercel 部署
+## Vercel 部署設定
+- Framework：Vite
+- Build Command：npm run build
+- Output Directory：dist
 
-直接將本資料夾內容上傳至 GitHub repo 根目錄，Vercel 會以靜態網站部署。
+## 檔案結構
+- `index.html`：網站主頁
+- `assets/`：網站圖片
+- `package.json`：Vite 設定
+- `vercel.json`：Vercel 設定
