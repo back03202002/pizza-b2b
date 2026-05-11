@@ -3975,6 +3975,201 @@ body {
 @media(max-width:900px){.kitGrid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.kitGrid{grid-template-columns:1fr}.salesKit{padding:56px 0}}
 
+
+
+/* ===== 本次更新：銷售情境 / 合作支援小卡背景圖 + SEO 重疊修正 ===== */
+.scenario .info-card,
+.kitCard {
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  background-image:
+    linear-gradient(180deg, rgba(255,255,255,.70) 0%, rgba(255,249,242,.88) 54%, rgba(255,245,236,.97) 100%),
+    var(--card-bg) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border: 1px solid rgba(181,130,99,.18) !important;
+  box-shadow: 0 18px 38px rgba(121,87,65,.11) !important;
+}
+
+.scenario .info-card::before,
+.kitCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 12% 10%, rgba(255,255,255,.42), transparent 34%);
+  opacity: .75;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.scenario .info-card:hover,
+.kitCard:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 26px 50px rgba(121,87,65,.17) !important;
+}
+
+.scenario .info-card {
+  min-height: 220px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+  padding: 26px !important;
+}
+
+.scenario .info-card .card-icon,
+.kitCard .kitIcon {
+  width: 50px !important;
+  height: 50px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 17px !important;
+  background: rgba(255,255,255,.84) !important;
+  box-shadow: 0 10px 24px rgba(83,55,38,.12) !important;
+  color: #7c3f46 !important;
+  font-size: 24px !important;
+  margin-bottom: 4px !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.scenario .info-card h3,
+.scenario .info-card p,
+.kitCard h3,
+.kitCard p {
+  position: relative !important;
+  z-index: 1 !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.55) !important;
+}
+
+.scenario .info-card h3,
+.kitCard h3 {
+  line-height: 1.35 !important;
+}
+
+.kitCard {
+  min-height: 236px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+  padding: 24px !important;
+}
+
+/* 最下方 SEO 區段避免中文長標題與關鍵字雲重疊 */
+.seoKeywordSection .sectionTitle {
+  max-width: 860px !important;
+  margin: 0 auto 28px !important;
+  text-align: center !important;
+}
+
+.seoKeywordSection .sectionTitle h2 {
+  line-height: 1.32 !important;
+  margin: 0 0 12px !important;
+  text-wrap: balance;
+  word-break: keep-all !important;
+  overflow-wrap: anywhere !important;
+}
+
+.seoKeywordSection .sectionTitle p {
+  line-height: 1.9 !important;
+  margin: 0 auto !important;
+}
+
+.seoKeywordCloud {
+  gap: 10px 12px !important;
+  margin: 6px auto 30px !important;
+  align-items: flex-start !important;
+}
+
+.seoKeywordCloud span {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 38px !important;
+  line-height: 1.5 !important;
+  white-space: normal !important;
+  word-break: keep-all !important;
+  overflow-wrap: anywhere !important;
+}
+
+.seoServiceGrid {
+  align-items: stretch !important;
+}
+
+.seoServiceCard {
+  height: 100% !important;
+}
+
+.seoServiceCard h3 {
+  font-size: clamp(18px, 2.1vw, 20px) !important;
+  line-height: 1.52 !important;
+  letter-spacing: -.01em !important;
+  word-break: keep-all !important;
+  overflow-wrap: anywhere !important;
+  margin-bottom: 10px !important;
+}
+
+.seoServiceCard p {
+  line-height: 1.95 !important;
+  font-size: 14px !important;
+}
+
+@media (max-width: 760px) {
+  .scenario .info-card,
+  .kitCard {
+    min-height: 200px !important;
+    padding: 22px 20px !important;
+  }
+
+  .scenario .info-card .card-icon,
+  .kitCard .kitIcon {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 14px !important;
+    font-size: 22px !important;
+  }
+
+  .seoKeywordSection {
+    padding-top: 58px !important;
+  }
+
+  .seoKeywordSection .sectionTitle {
+    margin-bottom: 20px !important;
+    text-align: left !important;
+  }
+
+  .seoKeywordSection .sectionTitle h2 {
+    font-size: clamp(26px, 8vw, 34px) !important;
+    line-height: 1.38 !important;
+  }
+
+  .seoKeywordCloud {
+    justify-content: flex-start !important;
+    margin: 0 auto 22px !important;
+  }
+
+  .seoKeywordCloud span {
+    font-size: 12.5px !important;
+    padding: 9px 12px !important;
+    min-height: auto !important;
+  }
+
+  .seoServiceCard {
+    padding: 20px 18px !important;
+  }
+
+  .seoServiceCard h3 {
+    font-size: 18px !important;
+    line-height: 1.58 !important;
+  }
+
+  .seoServiceCard p {
+    line-height: 1.95 !important;
+  }
+}
+
 </style>
 
 <meta name="description" content="PHONE PIZZA 提供冷凍披薩批發、手工披薩批發、冷凍食品批發、團購披薩、團爸團媽合作、餐飲店披薩進貨、咖啡廳輕食批發與冷凍披薩宅配合作。">
@@ -4101,43 +4296,6 @@ body {
     }
   ]
 }</script>
-
-<style>
-/* ===== 2026-05 HERO 字體大小修正：保留原始資料與打字機效果，只縮小主標 ===== */
-.hero h1,
-.hero h1.smoothTypewriterTitle,
-h1.typewriterTitle.smoothTypewriterTitle {
-  font-size: clamp(40px, 5.1vw, 68px) !important;
-  line-height: 1.08 !important;
-  max-width: 680px !important;
-}
-
-@media (min-width: 1101px) {
-  .hero h1,
-  .hero h1.smoothTypewriterTitle,
-  h1.typewriterTitle.smoothTypewriterTitle {
-    font-size: clamp(48px, 4.45vw, 68px) !important;
-  }
-}
-
-@media (max-width: 760px) {
-  .hero h1,
-  .hero h1.smoothTypewriterTitle,
-  h1.typewriterTitle.smoothTypewriterTitle {
-    font-size: clamp(30px, 8vw, 38px) !important;
-    line-height: 1.12 !important;
-    max-width: 100% !important;
-  }
-}
-
-@media (max-width: 420px) {
-  .hero h1,
-  .hero h1.smoothTypewriterTitle,
-  h1.typewriterTitle.smoothTypewriterTitle {
-    font-size: clamp(28px, 7.6vw, 34px) !important;
-  }
-}
-</style>
 </head>
 <body>
 <header class="header"><div class="container"><div class="brand">PHONE PIZZA<br><small>冷凍手工披薩｜通路開發・批發合作</small></div><nav class="nav"><a href="#products">全系列商品</a><a href="#heating">加熱方式</a><a href="#seo-wholesale">批發合作</a><a href="#contact-qr">LINE洽詢</a></nav></div></header>
@@ -4147,7 +4305,7 @@ h1.typewriterTitle.smoothTypewriterTitle {
   <span class="typewriterTextLayer" aria-hidden="true"><span class="typewriterLine" data-type-text="冷凍手工披薩批發">&nbsp;</span><span class="typewriterLine accentTypewriter" data-type-text="讓團購店家更好賣">&nbsp;</span></span>
 </h1><p>適合團爸團媽、團購公司、冷凍食品批發商與餐飲店家合作。口味完整、操作方便、素材齊全，協助通路快速上架銷售。</p><a class="btn" href="#contact-qr">我要批發合作 →</a><div class="trust"><div><strong>20款</strong><span>鹹甜口味完整</span></div><div><strong>3種</strong><span>常見加熱方式</span></div><div><strong>B2B</strong><span>團購/批發/店家</span></div></div></div><div class="hero-card"><img class="" src="./assets/phone-pizza-a34d3ad02880.jpg" alt="PHONE PIZZA 主視覺" loading="lazy"></div></div><div class="container quick"><div>❄️ 冷凍保存</div><div>📸 素材完整</div><div>🔥 加熱簡單</div><div>📦 通路彈性</div></div></section>
 <section class="brandVisualSection"><div class="container brand-visual"><article class="promo wide"><img class="" src="./assets/phone-pizza-cf99fc8e0d2f.png" alt="6吋薄脆系列" loading="lazy"><div><small>6吋薄脆系列</small><h2>20幾種口味任選</h2></div></article><article class="promo"><img class="" src="./assets/phone-pizza-6998f4032c9d.jpg" alt="地表最涮嘴的脆脆 PIZZA" loading="lazy"><div><small>社群推廣素材</small><h2>視覺記憶點更強</h2></div></article><article class="promo"><img class="" src="./assets/phone-pizza-8b6d2cc4bcf2.jpg" alt="瑪格麗特銷售冠軍" loading="lazy"><div><small>銷售冠軍</small><h2>主打品項清楚</h2></div></article></div></section>
-<section class="scenario-band"><div class="container"><span class="eyebrow">銷售情境</span><h2>把披薩放進不同場景</h2><div class="scenario"><article class="info-card">📣<h3>社群開團</h3><p>搭配商品圖與加熱說明，讓開團貼文更完整。</p></article><article class="info-card">🧊<h3>冷凍通路鋪貨</h3><p>建立完整冷凍披薩品類，適合搭配檔期。</p></article><article class="info-card">☕<h3>餐飲店加購</h3><p>操作簡單、出餐快速，適合作輕食選項。</p></article><article class="info-card">🎁<h3>節慶組合</h3><p>可組成節慶禮盒、企業團購與分享組。</p></article></div></div></section>
+<section class="scenario-band"><div class="container"><span class="eyebrow">銷售情境</span><h2>把披薩放進不同場景</h2><div class="scenario"><article class="info-card" style="--card-bg:url('./assets/phone-pizza-b79545798afe.jpg')"><div class="card-icon">📣</div><h3>社群開團</h3><p>搭配商品圖與加熱說明，讓開團貼文更完整。</p></article><article class="info-card" style="--card-bg:url('./assets/phone-pizza-f025fbecc11c.png')"><div class="card-icon">🧊</div><h3>冷凍通路鋪貨</h3><p>建立完整冷凍披薩品類，適合搭配檔期。</p></article><article class="info-card" style="--card-bg:url('./assets/phone-pizza-cf99fc8e0d2f.png')"><div class="card-icon">☕</div><h3>餐飲店加購</h3><p>操作簡單、出餐快速，適合作輕食選項。</p></article><article class="info-card" style="--card-bg:url('./assets/phone-pizza-6998f4032c9d.jpg')"><div class="card-icon">🎁</div><h3>節慶組合</h3><p>可組成節慶禮盒、企業團購與分享組。</p></article></div></div></section>
 <section class="mobile-only"><div class="container"><article class="promo"><img class="" src="./assets/phone-pizza-6998f4032c9d.jpg" alt="地表最涮嘴的脆脆 PIZZA" loading="lazy"><div><small>PHONE PIZZA</small><h2>地表最涮嘴的脆脆 PIZZA</h2><p>用品牌宣傳圖降低純文字疲勞感。</p></div></article></div></section>
 <section id="products" class="products-band"><div class="container"><div class="products-top"><div><span class="eyebrow">全系列商品</span><h2>20款口味，組合銷售更好推</h2><p>鹹食、甜點、經典、親子、海鮮、肉食口味完整。</p></div></div><div class="tabs"><button class="tab active" data-cat="全部">全部</button><button class="tab " data-cat="經典起司">經典起司</button><button class="tab " data-cat="親子熱銷">親子熱銷</button><button class="tab " data-cat="肉食系列">肉食系列</button><button class="tab " data-cat="海鮮系列">海鮮系列</button><button class="tab " data-cat="甜點披薩">甜點披薩</button><button class="tab " data-cat="蔬食清爽">蔬食清爽</button><button class="tab " data-cat="鹹食人氣">鹹食人氣</button></div><div class="products"><article class="product-card" data-category="經典起司">
       <div class="product-img"><img class="" src="./assets/phone-pizza-bc0a4ab4138d.jpg" alt="瑪格麗特" loading="lazy"><span>銷售冠軍 No.1</span></div>
@@ -4238,12 +4396,12 @@ h1.typewriterTitle.smoothTypewriterTitle {
       <p>把團購、批發、餐飲店進貨最在意的問題先講清楚，降低洽詢前的疑慮，也讓網站更像專業招商頁。</p>
     </div>
     <div class="kitGrid">
-      <article class="kitCard"><div class="kitIcon">📝</div><h3>開團素材</h3><p>提供商品圖片、口味介紹、加熱方式，讓團購主更快製作貼文。</p></article>
-      <article class="kitCard"><div class="kitIcon">🍕</div><h3>熱銷選品建議</h3><p>依通路客群搭配瑪格麗特、夏威夷、甜點款與特色款，降低第一次開團選品壓力。</p></article>
-      <article class="kitCard"><div class="kitIcon">📦</div><h3>批發與出貨規劃</h3><p>可洽詢批發價格、最低訂購量、冷凍配送方式與檔期合作。</p></article>
-      <article class="kitCard"><div class="kitIcon">☕</div><h3>餐飲店快速出餐</h3><p>適合咖啡廳、早午餐與宵夜店作為輕食加購，降低現場備料壓力。</p></article>
-      <article class="kitCard"><div class="kitIcon">🏕️</div><h3>露營備餐與家庭常備</h3><p>6吋小披薩冷凍好保存，適合露營、家庭聚會、宵夜點心與快速上桌。</p></article>
-      <article class="kitCard"><div class="kitIcon">💬</div><h3>LINE 快速洽詢</h3><p>掃描 QR Code 後提供合作身份、通路、需求量，我們協助整理適合方案。</p></article>
+      <article class="kitCard" style="--card-bg:url('./assets/phone-pizza-bc0a4ab4138d.jpg')"><div class="kitIcon">📝</div><h3>開團素材</h3><p>提供商品圖片、口味介紹、加熱方式，讓團購主更快製作貼文。</p></article>
+      <article class="kitCard" style="--card-bg:url('./assets/phone-pizza-f1edbb32ec0a.jpg')"><div class="kitIcon">🍕</div><h3>熱銷選品建議</h3><p>依通路客群搭配瑪格麗特、夏威夷、甜點款與特色款，降低第一次開團選品壓力。</p></article>
+      <article class="kitCard" style="--card-bg:url('./assets/phone-pizza-6652ce995958.jpg')"><div class="kitIcon">📦</div><h3>批發與出貨規劃</h3><p>可洽詢批發價格、最低訂購量、冷凍配送方式與檔期合作。</p></article>
+      <article class="kitCard" style="--card-bg:url('./assets/phone-pizza-7426862c6cc8.jpg')"><div class="kitIcon">☕</div><h3>餐飲店快速出餐</h3><p>適合咖啡廳、早午餐與宵夜店作為輕食加購，降低現場備料壓力。</p></article>
+      <article class="kitCard" style="--card-bg:url('./assets/phone-pizza-a34d3ad02880.jpg')"><div class="kitIcon">🏕️</div><h3>露營備餐與家庭常備</h3><p>6吋小披薩冷凍好保存，適合露營、家庭聚會、宵夜點心與快速上桌。</p></article>
+      <article class="kitCard" style="--card-bg:url('./assets/phone-pizza-84eb7e1a598c.jpg')"><div class="kitIcon">💬</div><h3>LINE 快速洽詢</h3><p>掃描 QR Code 後提供合作身份、通路、需求量，我們協助整理適合方案。</p></article>
     </div>
   </div>
 </section>
