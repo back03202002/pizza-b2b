@@ -4284,6 +4284,149 @@ body {
 }
 </style>
 
+
+<style>
+/* ===== PHONE PIZZA desktop scroll performance + back-to-top button ===== */
+@media (min-width: 761px) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .header {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(251,243,234,.96) !important;
+  }
+
+  .product-card,
+  .productCard,
+  .visual-card,
+  .mobileVisualCard,
+  .hot-card,
+  .mobileHotCard,
+  .info-card,
+  .kitCard,
+  .seoServiceCard,
+  .contact-feature-card,
+  .contact-side-card,
+  .process-step,
+  .heating-panel {
+    content-visibility: auto;
+    contain-intrinsic-size: 320px;
+  }
+
+  .scenario .info-card::before,
+  .kitCard::before {
+    will-change: auto !important;
+  }
+
+  /* Reduce hover-triggered animation while wheel-scrolling across many cards. */
+  .visual-card:hover,
+  .promo:hover,
+  .hot-card:hover,
+  .product-card:hover,
+  .productCard:hover,
+  .info-card:hover,
+  .kitCard:hover,
+  .seoServiceCard:hover {
+    transform: none !important;
+  }
+
+  .scenario .info-card:hover::before,
+  .kitCard:hover::before {
+    transform: scale(1.04) !important;
+  }
+
+  @supports (animation-timeline: view()) {
+    .product-card,
+    .productCard,
+    .hot-card,
+    .mobileHotCard,
+    .visual-card,
+    .mobileVisualCard,
+    .info-card,
+    .scenarioCard,
+    .channelCard,
+    .kitCard,
+    .stepCard,
+    .storyCard,
+    .brandBackdrop,
+    .mobilePromoBanner,
+    .heating-panel,
+    .heatingGuideCard,
+    .contact,
+    .contactBox,
+    .contact-feature-card,
+    .contact-side-card,
+    .process-step,
+    .advCard,
+    .faqItem {
+      animation: none !important;
+      opacity: 1 !important;
+      filter: none !important;
+    }
+  }
+}
+
+.backToTop {
+  position: fixed;
+  right: 20px;
+  bottom: 96px;
+  z-index: 60;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  color: #fffaf3;
+  background: linear-gradient(135deg, #8f5f45, #c58b67 58%, #dfbd86);
+  box-shadow: 0 16px 36px rgba(83,55,38,.22);
+  font-size: 22px;
+  font-weight: 950;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px) scale(.92);
+  transition: opacity .24s ease, transform .24s ease, box-shadow .24s ease;
+}
+
+.backToTop.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.backToTop:hover {
+  box-shadow: 0 20px 42px rgba(83,55,38,.28);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.backToTop:active {
+  transform: translateY(0) scale(.96);
+}
+
+@media (max-width: 760px) {
+  .backToTop {
+    right: 14px;
+    bottom: 104px;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backToTop,
+  .backToTop:hover,
+  .backToTop:active {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <header class="header"><div class="container"><div class="brand">PHONE PIZZA<br><small>冷凍手工披薩｜通路開發・批發合作</small></div><nav class="nav"><a href="#products">全系列商品</a><a href="#heating">加熱方式</a><a href="#seo-wholesale">批發合作</a><a href="#contact-qr">LINE洽詢</a></nav></div></header>
@@ -4293,7 +4436,7 @@ body {
   <span class="typewriterTextLayer" aria-hidden="true"><span class="typewriterLine" data-type-text="冷凍手工披薩批發">&nbsp;</span><span class="typewriterLine accentTypewriter" data-type-text="讓團購店家更好賣">&nbsp;</span></span>
 </h1><p>適合團爸團媽、團購公司、冷凍食品批發商與餐飲店家合作。口味完整、操作方便、素材齊全，協助通路快速上架銷售。</p><a class="btn" href="#contact-qr">我要批發合作 →</a><div class="trust"><div><strong>20款</strong><span>鹹甜口味完整</span></div><div><strong>3種</strong><span>常見加熱方式</span></div><div><strong>B2B</strong><span>團購/批發/店家</span></div></div></div><div class="hero-card"><img class="" src="./assets/phone-pizza-a34d3ad02880.jpg" alt="PHONE PIZZA 主視覺" loading="lazy"></div></div><div class="container quick"><div>❄️ 冷凍保存</div><div>📸 素材完整</div><div>🔥 加熱簡單</div><div>📦 通路彈性</div></div></section>
 <section class="brandVisualSection"><div class="container brand-visual"><article class="promo wide"><img class="" src="./assets/phone-pizza-cf99fc8e0d2f.png" alt="6吋薄脆系列" loading="lazy"><div><small>6吋薄脆系列</small><h2>20幾種口味任選</h2></div></article><article class="promo"><img class="" src="./assets/phone-pizza-6998f4032c9d.jpg" alt="地表最涮嘴的脆脆 PIZZA" loading="lazy"><div><small>社群推廣素材</small><h2>視覺記憶點更強</h2></div></article><article class="promo"><img class="" src="./assets/phone-pizza-8b6d2cc4bcf2.jpg" alt="瑪格麗特銷售冠軍" loading="lazy"><div><small>銷售冠軍</small><h2>主打品項清楚</h2></div></article></div></section>
-<section class="scenario-band"><div class="container"><span class="eyebrow">銷售情境</span><h2>把披薩放進不同場景</h2><div class="scenario"><article class="info-card" style="--card-bg:url('./assets/card-scenario-social-groupbuy.png')"><div class="card-icon">📣</div><h3>社群開團</h3><p>搭配商品圖與加熱說明，讓開團貼文更完整。</p></article><article class="info-card" style="--card-bg:url('./assets/card-scenario-frozen-retail.png')"><div class="card-icon">🧊</div><h3>冷凍通路鋪貨</h3><p>建立完整冷凍披薩品類，適合搭配檔期。</p></article><article class="info-card" style="--card-bg:url('./assets/card-scenario-cafe-addon.png')"><div class="card-icon">☕</div><h3>餐飲店加購</h3><p>操作簡單、出餐快速，適合作輕食選項。</p></article><article class="info-card" style="--card-bg:url('./assets/card-scenario-festival-gift.png')"><div class="card-icon">🎁</div><h3>節慶組合</h3><p>可組成節慶禮盒、企業團購與分享組。</p></article></div></div></section>
+<section class="scenario-band"><div class="container"><span class="eyebrow">銷售情境</span><h2>把披薩放進不同場景</h2><div class="scenario"><article class="info-card" style="--card-bg:url('./assets/card-scenario-social-groupbuy.webp')"><div class="card-icon">📣</div><h3>社群開團</h3><p>搭配商品圖與加熱說明，讓開團貼文更完整。</p></article><article class="info-card" style="--card-bg:url('./assets/card-scenario-frozen-retail.webp')"><div class="card-icon">🧊</div><h3>冷凍通路鋪貨</h3><p>建立完整冷凍披薩品類，適合搭配檔期。</p></article><article class="info-card" style="--card-bg:url('./assets/card-scenario-cafe-addon.webp')"><div class="card-icon">☕</div><h3>餐飲店加購</h3><p>操作簡單、出餐快速，適合作輕食選項。</p></article><article class="info-card" style="--card-bg:url('./assets/card-scenario-festival-gift.webp')"><div class="card-icon">🎁</div><h3>節慶組合</h3><p>可組成節慶禮盒、企業團購與分享組。</p></article></div></div></section>
 <section class="mobile-only"><div class="container"><article class="promo"><img class="" src="./assets/phone-pizza-6998f4032c9d.jpg" alt="地表最涮嘴的脆脆 PIZZA" loading="lazy"><div><small>PHONE PIZZA</small><h2>地表最涮嘴的脆脆 PIZZA</h2><p>用品牌宣傳圖降低純文字疲勞感。</p></div></article></div></section>
 <section id="products" class="products-band"><div class="container"><div class="products-top"><div><span class="eyebrow">全系列商品</span><h2>20款口味，組合銷售更好推</h2><p>鹹食、甜點、經典、親子、海鮮、肉食口味完整。</p></div></div><div class="tabs"><button class="tab active" data-cat="全部">全部</button><button class="tab " data-cat="經典起司">經典起司</button><button class="tab " data-cat="親子熱銷">親子熱銷</button><button class="tab " data-cat="肉食系列">肉食系列</button><button class="tab " data-cat="海鮮系列">海鮮系列</button><button class="tab " data-cat="甜點披薩">甜點披薩</button><button class="tab " data-cat="蔬食清爽">蔬食清爽</button><button class="tab " data-cat="鹹食人氣">鹹食人氣</button></div><div class="products"><article class="product-card" data-category="經典起司">
       <div class="product-img"><img class="" src="./assets/phone-pizza-bc0a4ab4138d.jpg" alt="瑪格麗特" loading="lazy"><span>銷售冠軍 No.1</span></div>
@@ -4384,12 +4527,12 @@ body {
       <p>把團購、批發、餐飲店進貨最在意的問題先講清楚，降低洽詢前的疑慮，也讓網站更像專業招商頁。</p>
     </div>
     <div class="kitGrid">
-      <article class="kitCard" style="--card-bg:url('./assets/card-support-content-kit.png')"><div class="kitIcon">📝</div><h3>開團素材</h3><p>提供商品圖片、口味介紹、加熱方式，讓團購主更快製作貼文。</p></article>
-      <article class="kitCard" style="--card-bg:url('./assets/card-support-hot-selection.png')"><div class="kitIcon">🍕</div><h3>熱銷選品建議</h3><p>依通路客群搭配瑪格麗特、夏威夷、甜點款與特色款，降低第一次開團選品壓力。</p></article>
-      <article class="kitCard" style="--card-bg:url('./assets/card-support-wholesale-shipping.png')"><div class="kitIcon">📦</div><h3>批發與出貨規劃</h3><p>可洽詢批發價格、最低訂購量、冷凍配送方式與檔期合作。</p></article>
-      <article class="kitCard" style="--card-bg:url('./assets/card-support-fast-serving.png')"><div class="kitIcon">☕</div><h3>餐飲店快速出餐</h3><p>適合咖啡廳、早午餐與宵夜店作為輕食加購，降低現場備料壓力。</p></article>
-      <article class="kitCard" style="--card-bg:url('./assets/card-support-camping-home.png')"><div class="kitIcon">🏕️</div><h3>露營備餐與家庭常備</h3><p>6吋小披薩冷凍好保存，適合露營、家庭聚會、宵夜點心與快速上桌。</p></article>
-      <article class="kitCard" style="--card-bg:url('./assets/card-support-line-contact.png')"><div class="kitIcon">💬</div><h3>LINE 快速洽詢</h3><p>掃描 QR Code 後提供合作身份、通路、需求量，我們協助整理適合方案。</p></article>
+      <article class="kitCard" style="--card-bg:url('./assets/card-support-content-kit.webp')"><div class="kitIcon">📝</div><h3>開團素材</h3><p>提供商品圖片、口味介紹、加熱方式，讓團購主更快製作貼文。</p></article>
+      <article class="kitCard" style="--card-bg:url('./assets/card-support-hot-selection.webp')"><div class="kitIcon">🍕</div><h3>熱銷選品建議</h3><p>依通路客群搭配瑪格麗特、夏威夷、甜點款與特色款，降低第一次開團選品壓力。</p></article>
+      <article class="kitCard" style="--card-bg:url('./assets/card-support-wholesale-shipping.webp')"><div class="kitIcon">📦</div><h3>批發與出貨規劃</h3><p>可洽詢批發價格、最低訂購量、冷凍配送方式與檔期合作。</p></article>
+      <article class="kitCard" style="--card-bg:url('./assets/card-support-fast-serving.webp')"><div class="kitIcon">☕</div><h3>餐飲店快速出餐</h3><p>適合咖啡廳、早午餐與宵夜店作為輕食加購，降低現場備料壓力。</p></article>
+      <article class="kitCard" style="--card-bg:url('./assets/card-support-camping-home.webp')"><div class="kitIcon">🏕️</div><h3>露營備餐與家庭常備</h3><p>6吋小披薩冷凍好保存，適合露營、家庭聚會、宵夜點心與快速上桌。</p></article>
+      <article class="kitCard" style="--card-bg:url('./assets/card-support-line-contact.webp')"><div class="kitIcon">💬</div><h3>LINE 快速洽詢</h3><p>掃描 QR Code 後提供合作身份、通路、需求量，我們協助整理適合方案。</p></article>
     </div>
   </div>
 </section>
@@ -4756,5 +4899,34 @@ document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>
 })();
 </script>
 
+
+
+<button class="backToTop" id="backToTop" type="button" aria-label="回到最上層">↑</button>
+<script>
+(function () {
+  var btn = document.getElementById("backToTop");
+  if (!btn) return;
+
+  var ticking = false;
+
+  function updateButton() {
+    btn.classList.toggle("is-visible", window.scrollY > 520);
+    ticking = false;
+  }
+
+  window.addEventListener("scroll", function () {
+    if (!ticking) {
+      window.requestAnimationFrame(updateButton);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  btn.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  updateButton();
+})();
+</script>
 
 </body></html>
