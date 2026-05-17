@@ -1,4 +1,4 @@
-# PHONE PIZZA SEO 關鍵字優化版
+# Phone Pizza SEO 關鍵字優化版
 
 本版已針對以下關鍵字優化：
 - 冷凍披薩批發
@@ -9,7 +9,7 @@
 - 餐飲店披薩進貨
 - 咖啡廳輕食批發
 - 冷凍披薩宅配
-- PHONE PIZZA
+- Phone Pizza
 
 已更新：
 - title

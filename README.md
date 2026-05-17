@@ -1,4 +1,4 @@
-# PHONE PIZZA 商業開發網站｜可部署輕量版
+# Phone Pizza 商業開發網站｜可部署輕量版
 
 這個版本已把圖片從 `index.html` 內嵌資料分離到 `assets/` 資料夾，避免 GitHub 單一檔案超過 100MB 的限制。
 
