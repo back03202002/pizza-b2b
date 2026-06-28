@@ -18,3 +18,7 @@ npm run dev
 - `assets/`：網站圖片
 - `package.json`：Vite 設定
 - `vercel.json`：Vercel 設定
+
+
+## SEO 分頁
+- `/frozen-mini-pizza-wholesale/`：6 吋冷凍小披薩批發
