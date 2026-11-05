@@ -103,6 +103,133 @@ details p{margin-top:0;padding-bottom:16px}
 @media(max-width:600px){section{padding:56px 0}.container{width:calc(100% - 24px)}.header .container{align-items:stretch;flex-direction:column;padding:12px 0}.nav{overflow-x:auto;flex-wrap:nowrap;width:calc(100% + 24px);margin-left:-12px;padding:0 12px}.nav a{white-space:nowrap}.hero{padding:48px 0 38px}.heroGrid{gap:24px}.heroVisual img{height:270px}.heroTrust,.grid4,.grid3,.grid2{grid-template-columns:1fr}.featureBand,.cta{padding:24px}.featureImage{height:300px}.sticky{left:12px;right:12px;bottom:12px;width:auto;transform:none;border-radius:22px;display:block;text-align:center}.sticky .btn{width:100%;margin-top:8px}.backTop{right:13px;bottom:108px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 </style>
+
+<style>
+/* ===== 尺寸分區：6吋 / 4" MINI ===== */
+.size-jump{
+  padding:18px 0 8px;
+}
+.size-jump .container{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.size-jump a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 18px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.84);
+  color:#754b36;
+  font-weight:950;
+  box-shadow:0 10px 26px rgba(88,57,40,.08);
+}
+.size-jump a:hover{transform:translateY(-2px)}
+.size-section-label{
+  display:inline-flex;
+  padding:8px 13px;
+  border-radius:999px;
+  margin-bottom:14px;
+  background:rgba(157,106,77,.10);
+  border:1px solid var(--line);
+  color:#7e4f36;
+  font-size:13px;
+  font-weight:950;
+}
+.mini4-section{
+  background:linear-gradient(180deg,#f8eee5 0%,#fffaf5 100%);
+}
+.mini4-hero{
+  display:grid;
+  grid-template-columns:1.18fr .82fr;
+  gap:18px;
+  margin:0 0 28px;
+}
+.mini4-visual{
+  position:relative;
+  min-height:320px;
+  overflow:hidden;
+  border-radius:28px;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+  background:#eee6de;
+}
+.mini4-visual img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.mini4-copy{
+  position:absolute;
+  left:18px;
+  right:18px;
+  bottom:18px;
+  padding:16px 18px;
+  border-radius:20px;
+  background:rgba(69,43,31,.80);
+  color:#fff;
+  backdrop-filter:blur(8px);
+}
+.mini4-copy small{color:#ffe3b8;font-weight:900}
+.mini4-copy strong{display:block;margin-top:3px;font-size:clamp(20px,2.5vw,30px)}
+.mini4-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+.mini4-card{
+  overflow:hidden;
+  border-radius:28px;
+  background:rgba(255,255,255,.88);
+  border:1px solid var(--line);
+  box-shadow:0 16px 40px rgba(88,57,40,.09);
+}
+.mini4-card-image{
+  aspect-ratio:1/1;
+  background:#eee6de;
+}
+.mini4-card-image img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  transition:transform .35s var(--ease);
+}
+.mini4-card:hover .mini4-card-image img{transform:scale(1.018)}
+.mini4-card-body{padding:20px}
+.mini4-card-body .tag{
+  display:inline-flex;
+  padding:7px 10px;
+  margin-bottom:10px;
+  border-radius:999px;
+  background:rgba(157,106,77,.10);
+  color:#7a4d36;
+  font-size:12px;
+  font-weight:950;
+}
+.mini4-card-body p{margin-bottom:0;font-size:14px}
+.no-price-note{
+  margin-top:22px;
+  padding:16px 18px;
+  border-radius:20px;
+  background:rgba(255,255,255,.72);
+  border:1px dashed rgba(157,106,77,.28);
+  color:#745240;
+  text-align:center;
+  font-weight:850;
+}
+@media(max-width:900px){
+  .mini4-grid{grid-template-columns:repeat(2,1fr)}
+  .mini4-hero{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .mini4-grid{grid-template-columns:1fr}
+  .mini4-visual{min-height:245px}
+}
+</style>
+
 </head>
 <body>
 <header class="header">
@@ -110,9 +237,9 @@ details p{margin-top:0;padding-bottom:16px}
     <a class="brand" href="/">Phone Pizza<small>冷凍手工披薩｜通路開發・批發合作</small></a>
     <nav class="nav">
       <a href="/">回首頁</a>
-      <a href="#advantages">批發優勢</a>
+      <a href="#six-inch-products">6 吋披薩</a>
+      <a href="#mini4-products">4&quot; MINI</a>
       <a href="#channels">適合通路</a>
-      <a href="#flavors">口味建議</a>
       <a href="#contact">合作洽詢</a>
     </nav>
   </div>
@@ -139,7 +266,15 @@ details p{margin-top:0;padding-bottom:16px}
         <img src="../assets/phone-pizza-f025fbecc11c.png" alt="Phone Pizza 6 吋冷凍小披薩批發系列">
       </div>
     </div>
+
   </section>
+
+  <div class="size-jump" aria-label="披薩尺寸專區">
+    <div class="container">
+      <a href="#six-inch-products">6 吋披薩專區</a>
+      <a href="#mini4-products">4&quot; MINI 迷你披薩專區</a>
+    </div>
+  </div>
 
   <section id="advantages">
     <div class="container">
@@ -172,12 +307,12 @@ details p{margin-top:0;padding-bottom:16px}
     </div>
   </section>
 
-  <section id="flavors">
+  <section id="six-inch-products">
     <div class="container">
       <div class="sectionHead">
-        <span class="eyebrow">口味選品建議</span>
-        <h2>第一次合作，可從大眾接受度高的口味開始</h2>
-        <p>實際批發組合可依你的通路、客群與預計銷售方式調整。</p>
+        <span class="size-section-label">6 吋披薩專區</span>
+        <h2>6 吋冷凍手工披薩｜經典口味選品</h2>
+        <p>6 吋規格適合單人主餐、咖啡廳輕食與團購家庭常備；實際組合可依通路與客群調整。</p>
       </div>
       <div class="grid3">
         <article class="card photoCard">
@@ -195,6 +330,94 @@ details p{margin-top:0;padding-bottom:16px}
       </div>
     </div>
   </section>
+
+  <section id="mini4-products" class="mini4-section">
+    <div class="container">
+      <div class="sectionHead">
+        <span class="size-section-label">4&quot; MINI 迷你披薩專區</span>
+        <h2>4 吋迷你披薩｜小份量、多口味、好搭配</h2>
+        <p>迷你尺寸適合親子點心、團購多口味組合、咖啡廳輕食與活動餐點。網站不公開價格，批發與合作條件請直接洽詢。</p>
+      </div>
+
+      <div class="mini4-hero">
+        <article class="mini4-visual">
+          <img src="../assets/phone-pizza-4inch-collection-wide.jpg" alt="Phone Pizza 4吋迷你披薩多口味系列" loading="lazy">
+          <div class="mini4-copy"><small>4&quot; MINI COLLECTION</small><strong>六款迷你披薩一次看</strong></div>
+        </article>
+        <article class="mini4-visual">
+          <img src="../assets/phone-pizza-4inch-collection-square.jpg" alt="Phone Pizza 4吋迷你披薩系列合照" loading="lazy">
+          <div class="mini4-copy"><small>團購・親子・輕食</small><strong>迷你尺寸更容易做組合銷售</strong></div>
+        </article>
+      </div>
+
+      <div class="mini4-grid">
+
+      <article class="mini4-card">
+        <div class="mini4-card-image">
+          <img src="../assets/phone-pizza-4inch-zucchini.jpg" alt="Phone Pizza 4吋迷你義式櫛瓜" loading="lazy">
+        </div>
+        <div class="mini4-card-body">
+          <span class="tag">就是這麼簡單</span>
+          <h3>4吋迷你義式櫛瓜</h3>
+          <p>櫛瓜與起司搭配，清爽的小份量迷你披薩。</p>
+        </div>
+      </article>
+      <article class="mini4-card">
+        <div class="mini4-card-image">
+          <img src="../assets/phone-pizza-4inch-hawaiian.jpg" alt="Phone Pizza 4吋迷你夏威夷" loading="lazy">
+        </div>
+        <div class="mini4-card-body">
+          <span class="tag">小孩最愛經典款</span>
+          <h3>4吋迷你夏威夷</h3>
+          <p>鳳梨、火腿與起司的經典組合，適合親子與家庭客群。</p>
+        </div>
+      </article>
+      <article class="mini4-card">
+        <div class="mini4-card-image">
+          <img src="../assets/phone-pizza-4inch-corn-ham.jpg" alt="Phone Pizza 4吋迷你玉米火腿" loading="lazy">
+        </div>
+        <div class="mini4-card-body">
+          <span class="tag">孩子必吃口味 NO.1</span>
+          <h3>4吋迷你玉米火腿</h3>
+          <p>玉米、火腿與起司組合，口味親切、容易入門。</p>
+        </div>
+      </article>
+      <article class="mini4-card">
+        <div class="mini4-card-image">
+          <img src="../assets/phone-pizza-4inch-four-riders.jpg" alt="Phone Pizza 4吋迷你四騎士" loading="lazy">
+        </div>
+        <div class="mini4-card-body">
+          <span class="tag">4種起司乳酪控必囤</span>
+          <h3>4吋迷你四騎士</h3>
+          <p>以多種起司為主角，適合喜歡濃郁乳酪風味的客群。</p>
+        </div>
+      </article>
+      <article class="mini4-card">
+        <div class="mini4-card-image">
+          <img src="../assets/phone-pizza-4inch-margherita.jpg" alt="Phone Pizza 4吋迷你瑪格麗特" loading="lazy">
+        </div>
+        <div class="mini4-card-body">
+          <span class="tag">熱銷薄片・清爽多汁</span>
+          <h3>4吋迷你瑪格麗特</h3>
+          <p>番茄、羅勒與起司的經典風味，清爽又有辨識度。</p>
+        </div>
+      </article>
+      <article class="mini4-card">
+        <div class="mini4-card-image">
+          <img src="../assets/phone-pizza-4inch-pepperoni.jpg" alt="Phone Pizza 4吋迷你美式臘腸" loading="lazy">
+        </div>
+        <div class="mini4-card-body">
+          <span class="tag">最純粹的 PEPPERONI</span>
+          <h3>4吋迷你美式臘腸</h3>
+          <p>美式臘腸搭配起司與番茄紅醬，風味直接、辨識度高。</p>
+        </div>
+      </article>
+      </div>
+
+      <div class="no-price-note">4&quot; MINI 迷你披薩批發價格不公開｜請透過 LINE 提供合作類型與預計數量，我們再提供合作資訊。</div>
+    </div>
+  </section>
+
 
   <section>
     <div class="container featureBand">
@@ -231,7 +454,7 @@ details p{margin-top:0;padding-bottom:16px}
         <h2>6 吋冷凍小披薩批發常見問題</h2>
       </div>
       <div class="faqList">
-        <details><summary>哪些通路適合販售 6 吋冷凍小披薩？</summary><p>適合團購主、冷凍食品通路、咖啡廳、早午餐店、選物店、餐飲店與家庭常備市場。</p></details>
+        <details><summary>哪些通路適合販售 6 吋與 4 吋冷凍小披薩？</summary><p>6 吋適合單人主餐、咖啡廳與家庭常備；4 吋 MINI 適合親子點心、多口味團購組合、活動餐點與輕食通路。</p></details>
         <details><summary>第一次合作應該怎麼挑口味？</summary><p>建議先以經典起司、親子接受度高的口味與一款特色甜點披薩組成入門組，再依客群回饋調整。</p></details>
         <details><summary>小披薩需要退冰才能加熱嗎？</summary><p>實際加熱方式以商品說明為準，一般可從冷凍狀態搭配氣炸鍋或烤箱操作，方便家庭與店家使用。</p></details>
         <details><summary>如何洽詢批發價格與最低訂購量？</summary><p>可透過頁面下方聯絡窗口，提供合作身份、通路、預計數量與想了解的口味，以便整理適合方案。</p></details>
